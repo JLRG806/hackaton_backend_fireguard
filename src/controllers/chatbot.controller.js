@@ -6,6 +6,9 @@ router.get("/chatbot", (req, res) =>{
 
     try {
         
+        
+        
+
         return res.status(200).json({ data: "resultData" });
     } catch (error) {
         console.error('Error in get:', error);
