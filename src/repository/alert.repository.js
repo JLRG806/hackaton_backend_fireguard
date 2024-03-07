@@ -42,13 +42,13 @@ AlertRepository.fetchAlert = () => {
                         // Check if a row was found
                         if (row) {
                             const record = {
-                                id: row.id,
+                                alert_id: row.id,
                                 sender_ip: row.sender_ip,
                                 created_at: row.created_at,
                                 latitude: row.latitude,
                                 longitude: row.longitude,
-                                status: row.status,
-                                isConfirmed: row.isConfirmed
+                                alert: Boolean(row.status),
+                                confirmed: Boolean(row.isConfirmed)
                             }
                             return resolve(record)
                         } else {
