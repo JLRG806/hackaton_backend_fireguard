@@ -42,7 +42,7 @@ router.post("/alert", async (req, res) => {
 router.put('/alert/:id', async (req, res) => {
     try {
         const schema = Joi.object({
-            confirm: Joi.boolean().required()
+            confirmed: Joi.boolean().required()
         })
         // Validate request body
         const { id } = req.params
@@ -51,9 +51,9 @@ router.put('/alert/:id', async (req, res) => {
             return res.status(400).json({ error: error.details[0].message })
         }
 
-        const { confirm } = req.body
+        const { confirmed } = req.body
 
-        const result = await AlertService.updateAlert(id, confirm)
+        const result = await AlertService.updateAlert(id, confirmed)
 
         if (result) {
             return res.sendStatus(200)
