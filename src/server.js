@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(cors({
     origin: '*',
     optionsSuccessStatus: 200,
-    methods: 'GET,HEAD,PATCH,POST,DELETE',
+    methods: 'GET,HEAD,PATCH,POST,DELETE,PUT',
     preflightContinue: false,
     allowedHeaders: 'Content-Type, Authorization, Content-Length, X-Requested-With',
 }))
